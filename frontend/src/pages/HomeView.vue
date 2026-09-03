@@ -6,7 +6,7 @@
         <v-icon icon="mdi-account" size="64" color="primary" />
       </v-avatar>
       <div class="hero-eyebrow">2026 萬巒鄉鄉民代表候選人</div>
-      <h1 class="hero-name">林政宏</h1>
+      <h1 class="hero-name">林成宏</h1>
       <p class="hero-tagline">
         腳踏實地・為萬巒做事<br class="d-sm-none">用心陪伴每一個角落
       </p>
@@ -47,7 +47,7 @@
 
     <!-- Footer -->
     <footer class="footer text-center py-6">
-      <div class="mb-1">萬巒鄉鄉民代表候選人 林政宏 服務團隊</div>
+      <div class="mb-1">萬巒鄉鄉民代表候選人 林成宏 服務團隊</div>
       <div class="text-caption">聯絡方式與競選辦公室資訊 敬請期待公告</div>
     </footer>
   </div>
