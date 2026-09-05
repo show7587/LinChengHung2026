@@ -274,19 +274,26 @@ const platformGroups = [
   font-size: 0.95rem;
   opacity: 0.92;
   margin-bottom: 4px;
+  color: #163d7a;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.28);
 }
 
 .hero-name {
   font-size: clamp(2.5rem, 8vw, 3.5rem);
   font-weight: 700;
   margin: 4px 0 12px;
-  text-shadow: 0 8px 24px rgba(47, 106, 170, 0.18);
+  color: #103a7a;
+  text-shadow: 0 10px 26px rgba(255, 255, 255, 0.22);
 }
 
 .hero-tagline {
   font-size: 1.05rem;
   line-height: 1.6;
-  opacity: 0.96;
+  opacity: 0.98;
+  color: #163d7a;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.25);
 }
 
 .section-title {
