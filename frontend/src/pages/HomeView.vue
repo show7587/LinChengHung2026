@@ -1,5 +1,16 @@
 <template>
   <div class="home-page">
+    <div class="background-bubbles" aria-hidden="true">
+      <span class="bubble bubble-1"></span>
+      <span class="bubble bubble-2"></span>
+      <span class="bubble bubble-3"></span>
+      <span class="bubble bubble-4"></span>
+      <span class="bubble bubble-5"></span>
+      <span class="bubble bubble-6"></span>
+      <span class="bubble bubble-7"></span>
+      <span class="bubble bubble-8"></span>
+    </div>
+
     <!-- Hero -->
     <section class="hero d-flex flex-column align-center justify-center text-center">
       <v-avatar size="96" color="white" class="mb-4 elevation-4">
@@ -13,7 +24,7 @@
     </section>
 
     <!-- Platform sections -->
-    <v-container class="py-8" style="max-width: 960px;">
+    <v-container class="py-8 content-layer" style="max-width: 960px;">
       <h2 class="section-title text-center mb-6">政見主張</h2>
 
       <v-row>
@@ -46,7 +57,7 @@
     </v-container>
 
     <!-- Footer -->
-    <footer class="footer text-center py-6">
+    <footer class="footer text-center py-6 content-layer">
       <div class="mb-1">萬巒鄉鄉民代表候選人 林成宏 服務團隊</div>
       <div class="text-caption">聯絡方式與競選辦公室資訊 敬請期待公告</div>
     </footer>
@@ -107,10 +118,92 @@ const platformGroups = [
 
 <style scoped>
 .home-page {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, #f4fcff 0%, #eaf8ff 42%, #fff4fa 100%);
 }
 
+.content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+.background-bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.45;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.35) 35%, rgba(87, 199, 255, 0.18) 70%, rgba(255, 79, 163, 0.12) 100%);
+  box-shadow: inset -10px -14px 28px rgba(87, 199, 255, 0.12), 0 14px 30px rgba(87, 199, 255, 0.12);
+}
+
+.bubble-1 {
+  width: 180px;
+  height: 180px;
+  top: 80px;
+  left: -40px;
+}
+
+.bubble-2 {
+  width: 120px;
+  height: 120px;
+  top: 180px;
+  right: 8%;
+}
+
+.bubble-3 {
+  width: 220px;
+  height: 220px;
+  top: 420px;
+  left: 6%;
+}
+
+.bubble-4 {
+  width: 140px;
+  height: 140px;
+  top: 520px;
+  right: -20px;
+}
+
+.bubble-5 {
+  width: 100px;
+  height: 100px;
+  bottom: 240px;
+  left: 18%;
+}
+
+.bubble-6 {
+  width: 160px;
+  height: 160px;
+  bottom: 120px;
+  right: 10%;
+}
+
+.bubble-7 {
+  width: 90px;
+  height: 90px;
+  top: 300px;
+  left: 50%;
+}
+
+.bubble-8 {
+  width: 200px;
+  height: 200px;
+  bottom: -40px;
+  left: 55%;
+}
+
 .hero {
+  position: relative;
+  z-index: 1;
   min-height: 46vh;
   padding: 48px 24px;
   background: linear-gradient(135deg, #57c7ff 0%, #8be0ff 52%, #ff7ab8 100%);
@@ -168,7 +261,7 @@ const platformGroups = [
 }
 
 .footer {
-  background: linear-gradient(180deg, #dff5ff 0%, #ffd9ec 100%);
+  background: linear-gradient(180deg, rgba(223, 245, 255, 0.8) 0%, rgba(255, 217, 236, 0.9) 100%);
   color: #5b4b5b;
 }
 </style>
