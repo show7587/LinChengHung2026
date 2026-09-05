@@ -9,6 +9,8 @@
       <span class="bubble bubble-6"></span>
       <span class="bubble bubble-7"></span>
       <span class="bubble bubble-8"></span>
+      <span class="bubble bubble-9"></span>
+      <span class="bubble bubble-10"></span>
     </div>
 
     <!-- Hero -->
@@ -120,7 +122,7 @@ const platformGroups = [
 .home-page {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #f4fcff 0%, #eaf8ff 42%, #fff4fa 100%);
+  background: linear-gradient(180deg, #eefbff 0%, #dff5ff 38%, #ffe9f4 100%);
 }
 
 .content-layer {
@@ -140,74 +142,103 @@ const platformGroups = [
   position: absolute;
   display: block;
   border-radius: 50%;
-  opacity: 0.45;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.35) 35%, rgba(87, 199, 255, 0.18) 70%, rgba(255, 79, 163, 0.12) 100%);
-  box-shadow: inset -10px -14px 28px rgba(87, 199, 255, 0.12), 0 14px 30px rgba(87, 199, 255, 0.12);
+  opacity: 0.72;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.72) 28%, rgba(87, 199, 255, 0.34) 68%, rgba(255, 79, 163, 0.26) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset -12px -18px 34px rgba(87, 199, 255, 0.18), 0 18px 42px rgba(87, 199, 255, 0.18), 0 0 0 10px rgba(255, 255, 255, 0.08);
   animation: floatUp 15s ease-in-out infinite;
 }
 
+.bubble::after {
+  content: '';
+  position: absolute;
+  width: 28%;
+  height: 28%;
+  top: 18%;
+  left: 20%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  filter: blur(1px);
+}
+
 .bubble-1 {
-  width: 180px;
-  height: 180px;
-  top: 80px;
+  width: 220px;
+  height: 220px;
+  top: 40px;
   left: -40px;
   animation-delay: 0s;
 }
 
 .bubble-2 {
-  width: 120px;
-  height: 120px;
-  top: 180px;
-  right: 8%;
+  width: 150px;
+  height: 150px;
+  top: 150px;
+  right: 5%;
   animation-delay: 2s;
 }
 
 .bubble-3 {
-  width: 220px;
-  height: 220px;
-  top: 420px;
-  left: 6%;
+  width: 260px;
+  height: 260px;
+  top: 390px;
+  left: 4%;
   animation-delay: 4s;
 }
 
 .bubble-4 {
-  width: 140px;
-  height: 140px;
-  top: 520px;
-  right: -20px;
+  width: 180px;
+  height: 180px;
+  top: 500px;
+  right: -30px;
   animation-delay: 1s;
 }
 
 .bubble-5 {
-  width: 100px;
-  height: 100px;
-  bottom: 240px;
+  width: 120px;
+  height: 120px;
+  bottom: 260px;
   left: 18%;
   animation-delay: 3s;
 }
 
 .bubble-6 {
-  width: 160px;
-  height: 160px;
+  width: 190px;
+  height: 190px;
   bottom: 120px;
-  right: 10%;
+  right: 9%;
   animation-delay: 5s;
 }
 
 .bubble-7 {
-  width: 90px;
-  height: 90px;
-  top: 300px;
-  left: 50%;
+  width: 110px;
+  height: 110px;
+  top: 280px;
+  left: 48%;
   animation-delay: 2.5s;
 }
 
 .bubble-8 {
-  width: 200px;
-  height: 200px;
-  bottom: -40px;
-  left: 55%;
+  width: 240px;
+  height: 240px;
+  bottom: -50px;
+  left: 52%;
   animation-delay: 6s;
+}
+
+.bubble-9 {
+  width: 130px;
+  height: 130px;
+  top: 90px;
+  left: 72%;
+  animation-delay: 1.5s;
+}
+
+.bubble-10 {
+  width: 170px;
+  height: 170px;
+  bottom: 320px;
+  right: 28%;
+  animation-delay: 4.5s;
 }
 
 @keyframes floatUp {
@@ -215,13 +246,13 @@ const platformGroups = [
     transform: translate3d(0, 0, 0) scale(1);
   }
   25% {
-    transform: translate3d(10px, -18px, 0) scale(1.03);
+    transform: translate3d(12px, -22px, 0) scale(1.04);
   }
   50% {
-    transform: translate3d(-12px, -36px, 0) scale(0.98);
+    transform: translate3d(-14px, -44px, 0) scale(0.98);
   }
   75% {
-    transform: translate3d(8px, -20px, 0) scale(1.02);
+    transform: translate3d(10px, -26px, 0) scale(1.03);
   }
   100% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -233,7 +264,8 @@ const platformGroups = [
   z-index: 1;
   min-height: 46vh;
   padding: 48px 24px;
-  background: linear-gradient(135deg, #57c7ff 0%, #8be0ff 52%, #ff7ab8 100%);
+  background: linear-gradient(135deg, rgba(87, 199, 255, 0.92) 0%, rgba(139, 224, 255, 0.88) 52%, rgba(255, 122, 184, 0.88) 100%);
+  backdrop-filter: blur(2px);
   color: #ffffff;
 }
 
@@ -265,9 +297,9 @@ const platformGroups = [
 
 .platform-card {
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(87, 199, 255, 0.18);
-  box-shadow: 0 12px 32px rgba(87, 199, 255, 0.08);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(87, 199, 255, 0.2);
+  box-shadow: 0 16px 38px rgba(87, 199, 255, 0.12);
 }
 
 .platform-title {
@@ -288,7 +320,7 @@ const platformGroups = [
 }
 
 .footer {
-  background: linear-gradient(180deg, rgba(223, 245, 255, 0.8) 0%, rgba(255, 217, 236, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(223, 245, 255, 0.86) 0%, rgba(255, 217, 236, 0.94) 100%);
   color: #5b4b5b;
 }
 </style>
