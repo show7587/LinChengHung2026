@@ -58,7 +58,7 @@ const platformGroups = [
   {
     title: '動物與長者福祉',
     icon: 'mdi-paw',
-    color: '#1B5E20',
+    color: '#57C7FF',
     items: [
       '持續推動貓狗節育，從源頭改善流浪動物問題',
       '推動長輩愛心手環，守護獨居與高齡長輩安全',
@@ -68,7 +68,7 @@ const platformGroups = [
   {
     title: '公共空間活化',
     icon: 'mdi-tree',
-    color: '#2E7D32',
+    color: '#7BD8FF',
     items: [
       '推動寵物樹葬區，讓毛孩善終、安心送別',
       '第一公墓公園化＋停車場推動，改善周邊環境與停車問題',
@@ -78,7 +78,7 @@ const platformGroups = [
   {
     title: '交通建設',
     icon: 'mdi-road-variant',
-    color: '#EF6C00',
+    color: '#FF7AB8',
     items: [
       '推動中正路、褒忠路標線行人道，還給行人安全的步行空間',
     ],
@@ -86,7 +86,7 @@ const platformGroups = [
   {
     title: '產業與觀光',
     icon: 'mdi-storefront',
-    color: '#6D4C41',
+    color: '#FF4FA3',
     items: [
       '萬巒零售市場再生與活化，重振在地買氣',
       '協助農村再生，結合地方文化發展深度旅行',
@@ -95,7 +95,7 @@ const platformGroups = [
   {
     title: '智慧防災與便民服務',
     icon: 'mdi-robot-outline',
-    color: '#1565C0',
+    color: '#4A90E2',
     badge: '規劃中',
     items: [
       'AI 賦能＋LineBot：即時提供台電停電、台水停水、公務單位道路施工等消息，同步發布於 Line 群組與官方宣導管道',
@@ -106,17 +106,21 @@ const platformGroups = [
 </script>
 
 <style scoped>
+.home-page {
+  background: linear-gradient(180deg, #f4fcff 0%, #eaf8ff 42%, #fff4fa 100%);
+}
+
 .hero {
   min-height: 46vh;
   padding: 48px 24px;
-  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 55%, #F9A825 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #57c7ff 0%, #8be0ff 52%, #ff7ab8 100%);
+  color: #ffffff;
 }
 
 .hero-eyebrow {
   letter-spacing: 0.08em;
   font-size: 0.95rem;
-  opacity: 0.9;
+  opacity: 0.92;
   margin-bottom: 4px;
 }
 
@@ -124,32 +128,38 @@ const platformGroups = [
   font-size: clamp(2.5rem, 8vw, 3.5rem);
   font-weight: 700;
   margin: 4px 0 12px;
+  text-shadow: 0 8px 24px rgba(47, 106, 170, 0.18);
 }
 
 .hero-tagline {
   font-size: 1.05rem;
   line-height: 1.6;
-  opacity: 0.95;
+  opacity: 0.96;
 }
 
 .section-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1B5E20;
+  color: #2b6cb0;
 }
 
 .platform-card {
   border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(87, 199, 255, 0.18);
+  box-shadow: 0 12px 32px rgba(87, 199, 255, 0.08);
 }
 
 .platform-title {
   font-weight: 700;
   white-space: normal;
+  color: #1f4f82;
 }
 
 .platform-list {
   margin: 0;
   padding-left: 1.1rem;
+  color: #3a4a5a;
 }
 
 .platform-list li {
@@ -158,7 +168,7 @@ const platformGroups = [
 }
 
 .footer {
-  background: #F5F5F5;
-  color: #555;
+  background: linear-gradient(180deg, #dff5ff 0%, #ffd9ec 100%);
+  color: #5b4b5b;
 }
 </style>
