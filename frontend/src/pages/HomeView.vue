@@ -143,6 +143,7 @@ const platformGroups = [
   opacity: 0.45;
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.35) 35%, rgba(87, 199, 255, 0.18) 70%, rgba(255, 79, 163, 0.12) 100%);
   box-shadow: inset -10px -14px 28px rgba(87, 199, 255, 0.12), 0 14px 30px rgba(87, 199, 255, 0.12);
+  animation: floatUp 15s ease-in-out infinite;
 }
 
 .bubble-1 {
@@ -150,6 +151,7 @@ const platformGroups = [
   height: 180px;
   top: 80px;
   left: -40px;
+  animation-delay: 0s;
 }
 
 .bubble-2 {
@@ -157,6 +159,7 @@ const platformGroups = [
   height: 120px;
   top: 180px;
   right: 8%;
+  animation-delay: 2s;
 }
 
 .bubble-3 {
@@ -164,6 +167,7 @@ const platformGroups = [
   height: 220px;
   top: 420px;
   left: 6%;
+  animation-delay: 4s;
 }
 
 .bubble-4 {
@@ -171,6 +175,7 @@ const platformGroups = [
   height: 140px;
   top: 520px;
   right: -20px;
+  animation-delay: 1s;
 }
 
 .bubble-5 {
@@ -178,6 +183,7 @@ const platformGroups = [
   height: 100px;
   bottom: 240px;
   left: 18%;
+  animation-delay: 3s;
 }
 
 .bubble-6 {
@@ -185,6 +191,7 @@ const platformGroups = [
   height: 160px;
   bottom: 120px;
   right: 10%;
+  animation-delay: 5s;
 }
 
 .bubble-7 {
@@ -192,6 +199,7 @@ const platformGroups = [
   height: 90px;
   top: 300px;
   left: 50%;
+  animation-delay: 2.5s;
 }
 
 .bubble-8 {
@@ -199,6 +207,25 @@ const platformGroups = [
   height: 200px;
   bottom: -40px;
   left: 55%;
+  animation-delay: 6s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(10px, -18px, 0) scale(1.03);
+  }
+  50% {
+    transform: translate3d(-12px, -36px, 0) scale(0.98);
+  }
+  75% {
+    transform: translate3d(8px, -20px, 0) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 .hero {
