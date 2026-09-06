@@ -146,7 +146,8 @@ const platformGroups = [
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.72) 28%, rgba(87, 199, 255, 0.34) 68%, rgba(255, 79, 163, 0.26) 100%);
   border: 2px solid rgba(255, 255, 255, 0.7);
   box-shadow: inset -12px -18px 34px rgba(87, 199, 255, 0.18), 0 18px 42px rgba(87, 199, 255, 0.18), 0 0 0 10px rgba(255, 255, 255, 0.08);
-  animation: floatUp 15s ease-in-out infinite;
+  animation: floatBubble 9s ease-in-out infinite;
+  will-change: transform;
 }
 
 .bubble::after {
@@ -167,6 +168,7 @@ const platformGroups = [
   top: 40px;
   left: -40px;
   animation-delay: 0s;
+  animation-duration: 8.5s;
 }
 
 .bubble-2 {
@@ -174,7 +176,8 @@ const platformGroups = [
   height: 150px;
   top: 150px;
   right: 5%;
-  animation-delay: 2s;
+  animation-delay: 1.4s;
+  animation-duration: 7.8s;
 }
 
 .bubble-3 {
@@ -182,7 +185,8 @@ const platformGroups = [
   height: 260px;
   top: 390px;
   left: 4%;
-  animation-delay: 4s;
+  animation-delay: 3.2s;
+  animation-duration: 10.2s;
 }
 
 .bubble-4 {
@@ -190,7 +194,8 @@ const platformGroups = [
   height: 180px;
   top: 500px;
   right: -30px;
-  animation-delay: 1s;
+  animation-delay: 0.9s;
+  animation-duration: 8.8s;
 }
 
 .bubble-5 {
@@ -198,7 +203,8 @@ const platformGroups = [
   height: 120px;
   bottom: 260px;
   left: 18%;
-  animation-delay: 3s;
+  animation-delay: 2.1s;
+  animation-duration: 7.6s;
 }
 
 .bubble-6 {
@@ -206,7 +212,8 @@ const platformGroups = [
   height: 190px;
   bottom: 120px;
   right: 9%;
-  animation-delay: 5s;
+  animation-delay: 4.2s;
+  animation-duration: 9.6s;
 }
 
 .bubble-7 {
@@ -214,7 +221,8 @@ const platformGroups = [
   height: 110px;
   top: 280px;
   left: 48%;
-  animation-delay: 2.5s;
+  animation-delay: 1.8s;
+  animation-duration: 7.2s;
 }
 
 .bubble-8 {
@@ -222,7 +230,8 @@ const platformGroups = [
   height: 240px;
   bottom: -50px;
   left: 52%;
-  animation-delay: 6s;
+  animation-delay: 5.1s;
+  animation-duration: 10.5s;
 }
 
 .bubble-9 {
@@ -230,7 +239,8 @@ const platformGroups = [
   height: 130px;
   top: 90px;
   left: 72%;
-  animation-delay: 1.5s;
+  animation-delay: 1.1s;
+  animation-duration: 7.9s;
 }
 
 .bubble-10 {
@@ -238,24 +248,28 @@ const platformGroups = [
   height: 170px;
   bottom: 320px;
   right: 28%;
-  animation-delay: 4.5s;
+  animation-delay: 3.6s;
+  animation-duration: 8.9s;
 }
 
-@keyframes floatUp {
+@keyframes floatBubble {
   0% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
   }
-  25% {
-    transform: translate3d(12px, -22px, 0) scale(1.04);
+  20% {
+    transform: translate3d(18px, -28px, 0) scale(1.06) rotate(2deg);
   }
-  50% {
-    transform: translate3d(-14px, -44px, 0) scale(0.98);
+  40% {
+    transform: translate3d(-22px, -62px, 0) scale(0.96) rotate(-3deg);
   }
-  75% {
-    transform: translate3d(10px, -26px, 0) scale(1.03);
+  60% {
+    transform: translate3d(20px, -96px, 0) scale(1.08) rotate(3deg);
+  }
+  80% {
+    transform: translate3d(-16px, -54px, 0) scale(0.98) rotate(-2deg);
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
   }
 }
 
