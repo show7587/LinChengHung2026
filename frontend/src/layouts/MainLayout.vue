@@ -1,6 +1,8 @@
 <template>
   <v-app-bar density="compact" color="primary">
-    <v-app-bar-title class="app-bar-title">萬巒鄉鄉民代表候選人 林成宏</v-app-bar-title>
+    <v-app-bar-title class="app-bar-title">
+      <router-link to="/" class="app-bar-link">萬巒鄉鄉民代表候選人 林成宏</router-link>
+    </v-app-bar-title>
   </v-app-bar>
   <router-view />
 </template>
@@ -17,5 +19,9 @@
   text-shadow:
     0 1px 0 rgba(35, 94, 145, 0.45),
     0 2px 6px rgba(35, 94, 145, 0.22);
+}
+.app-bar-link {
+  color: inherit;
+  text-decoration: none;
 }
 </style>

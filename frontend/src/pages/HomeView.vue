@@ -58,6 +58,55 @@
       </v-row>
     </v-container>
 
+    <!-- Achievements summary -->
+    <v-container class="pb-10 content-layer" style="max-width: 960px;">
+      <h2 class="section-title text-center mb-2">四年服務成果</h2>
+      <p class="section-subtitle text-center mb-6">鄉親的每一件陳情，都認真追蹤到底</p>
+
+      <v-row dense class="mb-4">
+        <v-col v-for="stat in stats" :key="stat.label" cols="6" md="3">
+          <v-card class="stat-card text-center" elevation="0">
+            <v-icon :icon="stat.icon" :color="stat.color" size="28" />
+            <div class="stat-value" :style="{ color: stat.color }">{{ stat.value }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </v-card>
+        </v-col>
+      </v-row>
+
+      <h3 class="highlight-heading mb-3">代表性成果</h3>
+      <v-row dense>
+        <v-col v-for="item in highlights" :key="item.title" cols="12" md="6">
+          <v-card class="highlight-card h-100" elevation="0">
+            <v-card-item>
+              <template #prepend>
+                <v-avatar :color="getCategory(item.category).color" size="40">
+                  <v-icon :icon="getCategory(item.category).icon" color="white" size="22" />
+                </v-avatar>
+              </template>
+              <v-card-title class="highlight-title">{{ item.title }}</v-card-title>
+              <v-card-subtitle class="highlight-meta">
+                {{ item.result }}・{{ item.date ? item.date.slice(0, 7).replace('-', '/') : '' }}
+              </v-card-subtitle>
+            </v-card-item>
+          </v-card>
+        </v-col>
+      </v-row>
+
+      <div class="text-center mt-6">
+        <v-btn
+          to="/achievements"
+          color="secondary"
+          variant="flat"
+          size="x-large"
+          rounded="pill"
+          append-icon="mdi-chevron-right"
+          class="more-btn"
+        >
+          看全部 {{ achievements.length }} 件服務紀錄
+        </v-btn>
+      </div>
+    </v-container>
+
     <!-- Footer -->
     <footer class="footer text-center py-6 content-layer">
       <div class="mb-1">萬巒鄉鄉民代表候選人 林成宏 服務團隊</div>
@@ -67,6 +116,35 @@
 </template>
 
 <script setup>
+import {
+  achievements,
+  countByCategory,
+  getCategory,
+} from '@/data/achievementCategories'
+
+const stats = [
+  { label: '已完成案件', value: achievements.length, icon: 'mdi-check-decagram', color: '#2b6cb0' },
+  ...['traffic', 'road', 'animal'].map(key => ({
+    label: getCategory(key).label,
+    value: countByCategory(key),
+    icon: getCategory(key).icon,
+    color: getCategory(key).color,
+  })),
+]
+
+const highlightTitles = [
+  '萬巒國中國小安裝主動式紅綠燈',
+  '萬巒國小操場夜間照明設備',
+  '公車亭建置、站牌改版',
+  '三村集會所活動中心',
+  '臨時會提案動物節育',
+  '萬巒垃圾車應更換有GPS，這樣才可以搭配APP',
+]
+
+const highlights = highlightTitles
+  .map(title => achievements.find(a => a.title === title))
+  .filter(Boolean)
+
 const platformGroups = [
   {
     title: '動物與長者福祉',
@@ -338,6 +416,58 @@ const platformGroups = [
 .platform-list li {
   margin-bottom: 6px;
   line-height: 1.5;
+}
+
+.section-subtitle {
+  color: #5a6b7c;
+}
+
+.stat-card {
+  padding: 16px 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(87, 199, 255, 0.2);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #3a4a5a;
+}
+
+.highlight-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f4f82;
+}
+
+.highlight-card {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(87, 199, 255, 0.2);
+}
+
+.highlight-title {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: normal;
+  line-height: 1.5;
+  color: #24415d;
+}
+
+.highlight-meta {
+  white-space: normal;
+  opacity: 0.85;
+}
+
+.more-btn {
+  max-width: 100%;
+  font-weight: 700;
 }
 
 .footer {
